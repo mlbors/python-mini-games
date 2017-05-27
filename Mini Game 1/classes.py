@@ -1,5 +1,6 @@
 import pygame
 
+
 # **********************
 # ***** BASE CLASS *****
 # **********************
@@ -33,6 +34,7 @@ class BaseClass(pygame.sprite.Sprite):
         # ****************************************
         # ****************************************
 
+
 # *********************
 # ***** BUG CLASS *****
 # *********************
@@ -54,9 +56,7 @@ class Bug(BaseClass):
 
     def __init__(self, x, y, width, height, image_string):
         BaseClass.__init__(self, x, y, width, height, image_string)
-
         Bug.List.add(self)
-
         self.velx = 3
 
     # ****************************************
