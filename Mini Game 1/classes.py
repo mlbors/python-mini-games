@@ -57,7 +57,7 @@ class Bug(BaseClass):
     def __init__(self, x, y, width, height, image_string):
         BaseClass.__init__(self, x, y, width, height, image_string)
         Bug.List.add(self)
-        self.velx = 3
+        self.velx = 0
 
     # ****************************************
     # ****************************************

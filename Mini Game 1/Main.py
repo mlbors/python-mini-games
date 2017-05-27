@@ -2,6 +2,8 @@ import pygame
 import sys
 
 from classes import *
+from process import process
+
 
 # ****************
 # ***** INIT *****
@@ -16,8 +18,8 @@ pygame.init()
 # SCREEN
 # ------
 
-WIDTH, HEIGHT = 640, 360
-screen = pygame.display.set_mode((WIDTH, HEIGHT), 0, 32)
+SCREENWIDTH, SCREENHEIGHT = 640, 360
+screen = pygame.display.set_mode((SCREENWIDTH, SCREENHEIGHT), 0, 32)
 
 # CLOCK
 # -----
@@ -42,7 +44,7 @@ i = 0
 # OBJECTS
 # -------
 
-bug = Bug(0, 100, 40, 40, "assets/img/fly-001.png")
+bug = Bug(0, SCREENHEIGHT - 40, 45, 36, "assets/img/fly-001.png")
 
 # ****************************************
 # ****************************************
@@ -57,10 +59,7 @@ while True:
     # ***** PROCESSES *****
     # *********************
 
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()
+    process(bug)
 
     # ****************************************
     # ****************************************
