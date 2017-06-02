@@ -1,6 +1,7 @@
 import pygame
 import sys
 
+
 # *********************
 # ***** PROCESSES *****
 # *********************
@@ -15,9 +16,9 @@ def process(bug):
 
     if keys[pygame.K_d]:
         bug.image = pygame.image.load("assets/img/fly-001.png")
-        bug.velx = 5
+        bug.vel_x = 5
     elif keys[pygame.K_a]:
         bug.image = pygame.image.load("assets/img/fly-flipped-001.png")
-        bug.velx = -5
+        bug.vel_x = -5
     else:
-        bug.velx = 0
+        bug.vel_x = 0

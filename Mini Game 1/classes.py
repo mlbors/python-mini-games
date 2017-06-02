@@ -57,7 +57,7 @@ class Bug(BaseClass):
     def __init__(self, x, y, width, height, image_string):
         BaseClass.__init__(self, x, y, width, height, image_string)
         Bug.List.add(self)
-        self.velx = 0
+        self.vel_x = 0
 
     # ****************************************
     # ****************************************
@@ -66,5 +66,13 @@ class Bug(BaseClass):
     # ***** MOTION *****
     # ******************
 
-    def motion(self):
-        self.rect.x += self.velx
+    def motion(self, SCREENWIDTH):
+
+        predicted_location = self.rect.x + self.vel_x
+
+        if predicted_location < 0:
+            self.vel_x = 0
+        elif predicted_location + self.width > SCREENWIDTH:
+            self.vel_x = 0
+
+        self.rect.x += self.vel_x
